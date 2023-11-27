@@ -1,0 +1,33 @@
+ public int remove()
+        {
+            int data = arr.get(0);
+            //swap
+            int temp = arr.get(0);
+            arr.set(0,arr.get(arr.size()-1));
+            arr.set(arr.size()-1,temp);
+
+            //delete last
+            arr.remove(arr.size()-1);
+
+            //heapify
+            heapify(0);
+            return data;
+        }
+        public boolean isEmpty()
+        {
+            return arr.size()==0;
+        }
+   // }
+    public static void main(String args[])
+    {
+        Heap h = new Heap();
+        h.add(3);
+        h.add(4);
+        h.add(1);
+        h.add(5);
+        while(!h.isEmpty())
+        {
+            System.out.println(h.peek());
+            h.remove();
+        }
+    }
