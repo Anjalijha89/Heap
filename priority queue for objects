@@ -1,0 +1,26 @@
+static class student implements Comparable<student>
+        {
+            String name;
+            int rank;
+            public student(String name,int rank)
+            {
+                this.name = name;
+                this.rank = rank;
+            }
+            @Override
+            public int compareTo(student s2)
+            {
+                return this.rank - s2.rank;
+            }
+        }
+        public static void main(String args[]) {
+            PriorityQueue<student> p = new PriorityQueue<>();  //accending order
+            p.add(new student("A",4));
+            p.add(new student("B",5));
+            p.add(new student("C",2));
+            p.add(new student("D",34));
+            while (!p.isEmpty()) {
+                System.out.println(p.peek().name +" -> "+ p.peek().rank);
+                p.remove();
+            }
+        }
